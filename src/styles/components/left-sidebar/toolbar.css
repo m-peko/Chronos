@@ -1,0 +1,26 @@
+.aside-left {
+    background: rgb(36, 39, 46);
+}
+
+.toolbar {
+    padding: 0;
+    list-style: none;
+}
+
+.toolbar > li {
+    line-height: 45px;
+}
+
+.toolbar > li > a {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(108, 112, 122);
+    border-left: 3px solid rgb(36, 39, 46);
+}
+
+.toolbar > li > a:hover {
+    color: rgb(252, 192, 44);
+    background-color: rgb(23, 26, 31);
+    border-left: 3px solid rgb(252, 192, 44);
+}

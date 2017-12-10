@@ -1,0 +1,33 @@
+.search {
+    position: relative;
+    width: 33%;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.search input#search {
+    width: 500px;
+    height: 35px;
+    background: rgb(242, 242, 242);
+    border: none;
+    font-size: 12pt;
+    float: left;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    padding-left: 30px;
+    border-radius: 3px;
+}
+
+.search .search-icon {
+    position: absolute;
+    top: 16px;
+    left: 7px;
+    font-size: 15px;
+    color: rgb(79, 91, 102);
+}
+
+@media screen and (max-width: 900px) {
+    .search {
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgb(36, 39, 46);
+    overflow: hidden;
+}
+
+.logo {
+    height: 35px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .logo {
+        margin-top: 15px;
+        height: 25px;
+    }
+}

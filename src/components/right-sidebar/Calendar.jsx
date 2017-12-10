@@ -1,0 +1,128 @@
+import React, { Component } from 'react';
+import CalendarHeader from './CalendarHeader';
+import Week from './Week';
+
+import '../../styles/components/right-sidebar/calendar.css';
+
+class Calendar extends Component {
+    constructor() {
+        super();
+
+        const now = new Date();
+        this.state = {
+            year: now.getFullYear(),
+            month: now.getMonth()
+        }
+
+        this.changeState = this.changeState.bind(this);
+    }
+
+    /**
+     * Calendar state changer
+     * @param  {object} state Object representing calendar state
+     * @return {void}
+     */
+    changeState(state) {
+        this.setState(state);
+    }
+
+    /**
+     * Gets the number of days in the month
+     * @param  {integer} year  An integer representing the year
+     * @param  {integer} month An integer representing the month (0 - 11)
+     * @return {integer}       Number of days in the given month
+     */
+    getDaysInMonth(year, month) {
+        const isLeap = ((year % 4) === 0 && ((year % 100) !== 0 || (year % 400) === 0));
+        return [31, (isLeap ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
+    }
+
+    /**
+     * Generates calendar table body
+     * @return {React element} Table rows, i.e. weeks and days
+     */
+    generateCalendarBody() {
+        const date = new Date();
+        date.setDate(1);
+        date.setMonth(this.state.month);
+        date.setYear(this.state.year);
+
+        /**
+         * Transforming first weekday numbering
+         * (Su = 0, Mo = 1, ..., Sa 6) => (Mo = 0, Tu = 1, ..., Su = 6)
+         */
+        let firstWeekDay = date.getDay();
+        firstWeekDay--;
+        if (firstWeekDay === -1) {
+            firstWeekDay = 6;
+        }
+
+        const daysInMonth = this.getDaysInMonth(this.state.year,
+                                                this.state.month);
+
+        let weekDays = [];
+        for (let i = 0; i - firstWeekDay < daysInMonth; i++) {
+            if (i >= firstWeekDay) {
+                if (i - firstWeekDay + 1 === new Date().getDate() &&
+                    this.state.year === new Date().getFullYear() &&
+                    this.state.month === new Date().getMonth()) {
+                    weekDays.push({
+                        isActive: true,
+                        date: i - firstWeekDay + 1
+                    });
+                } else {
+                    weekDays.push({
+                        isActive: false,
+                        date: i - firstWeekDay + 1
+                    });
+                }
+            } else {
+                weekDays.push({
+                    isActive: false,
+                    date: ''
+                });
+            }
+        }
+
+        let weeks = [];
+        while (weekDays.length > 0) {
+            weeks.push({
+                days: weekDays.splice(0, 7)
+            });
+        }
+
+        const content = weeks.map(week => {
+            return <Week days={ week.days }/>;
+        });
+
+        return (
+            <tbody>
+                { content }
+            </tbody>
+        );
+    }
+
+    render() {
+        return (
+            <aside className='item aside-right'>
+                <CalendarHeader year={ this.state.year } month={ this.state.month } changeState={ this.changeState }/>
+                <table className='weeks'>
+                    <thead>
+                        <tr>
+                            <th>Mo</th>
+                            <th>Tu</th>
+                            <th>We</th>
+                            <th>Th</th>
+                            <th>Fr</th>
+                            <th>Sa</th>
+                            <th>Su</th>
+                        </tr>
+                    </thead>
+                    { this.generateCalendarBody() }
+                </table>
+            </aside>
+        );
+    }
+}
+
+export default Calendar;

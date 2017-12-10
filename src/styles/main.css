@@ -1,0 +1,54 @@
+.app-btn {
+    border: 0px;
+    border-radius: 1px;
+    background-color: rgb(252, 192, 44);
+    color: rgb(36, 39, 46);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.app-btn:hover,
+.app-btn:active,
+.app-btn:focus {
+    background-color: rgb(251, 181, 4) !important;
+}
+
+.item {
+    text-align: center;
+}
+
+@supports (display: grid) {
+    @media screen and (min-width: 400px) {
+        .wrapper {
+            display: grid;
+            grid-template-rows: 55px calc(100vh - 55px);
+            grid-template-columns: 60px 4fr 1fr;
+            grid-template-areas:
+                'header header header'
+                'aside-left main aside-right';
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .aside-left {
+            grid-area: aside-left;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .aside-right {
+            grid-area: aside-right;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .aside-left,
+    .aside-right {
+        display: none;
+    }
+}

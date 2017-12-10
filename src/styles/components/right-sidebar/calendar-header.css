@@ -1,0 +1,42 @@
+.month {
+    margin-top: 60px;
+    padding: 10px 25px;
+    width: 100%;
+    height: 70px;
+    background: rgb(36, 39, 46);
+    text-align: center;
+    cursor: default;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.month ul li {
+    color: rgb(108, 112, 122);
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.month .prev:hover,
+.month .next:hover {
+    color: rgb(252, 192, 44);
+    cursor: pointer;
+}
+
+.month .month-details {
+    color: rgb(252, 192, 44);
+}
