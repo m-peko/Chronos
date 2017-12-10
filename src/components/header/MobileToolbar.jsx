@@ -7,29 +7,19 @@ class MobileToolbar extends Component {
         return (
             <ul className='mobile-toolbar'>
                 <li>
-                    <a href='#'>
-                        <i className='fa fa-search' aria-hidden='true'/>
-                    </a>
+                    <i className='fa fa-search' aria-hidden='true'/>
                 </li>
                 <li>
-                    <a href='#'>
-                        <i className='fa fa-plus' aria-hidden='true'/>
-                    </a>
+                    <i className='fa fa-plus' aria-hidden='true'/>
                 </li>
                 <li>
-                    <a href='#'>
-                        <i className='fa fa-refresh' aria-hidden='true'/>
-                    </a>
+                    <i className='fa fa-refresh' aria-hidden='true'/>
                 </li>
                 <li>
-                    <a href='#'>
-                        <i className='fa fa-calendar' aria-hidden='true'/>
-                    </a>
+                    <i className='fa fa-calendar' aria-hidden='true'/>
                 </li>
                 <li>
-                    <a href=''>
-                        <i className='fa fa-user' aria-hidden='true'/>
-                    </a>
+                    <i className='fa fa-user' aria-hidden='true'/>
                 </li>
             </ul>
         );
