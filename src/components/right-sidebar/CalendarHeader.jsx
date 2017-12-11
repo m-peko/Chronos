@@ -6,27 +6,18 @@ class CalendarHeader extends Component {
     constructor(props) {
         super(props);
 
-        this.previousMonth = this.previousMonth.bind(this);
-        this.nextMonth = this.nextMonth.bind(this);
+        this.goToPreviousMonth = this.goToPreviousMonth.bind(this);
+        this.goToNextMonth = this.goToNextMonth.bind(this);
     }
 
-    /**
-     * Gets the name of the month
-     * @param  {integer} month An integer representing the month (0 - 11)
-     * @return {string}        Name of the month
-     */
-    getMonthString(month) {
+    getMonthName(month) {
         const months = ['January', 'February', 'March', 'April', 'May', 'June',
                         'July', 'August', 'September', 'October', 'November', 'December'];
 
         return months[month];
     }
 
-    /**
-     * Returns to the previous month
-     * @return {void}
-     */
-    previousMonth() {
+    goToPreviousMonth() {
         if (this.props.month === 0) {
             this.props.changeState({
                 year: this.props.year - 1,
@@ -40,11 +31,7 @@ class CalendarHeader extends Component {
         }
     }
 
-    /**
-     * Proceeds to the next month
-     * @return {void}
-     */
-    nextMonth() {
+    goToNextMonth() {
         if (this.props.month === 11) {
             this.props.changeState({
                 year: this.props.year + 1,
@@ -62,10 +49,10 @@ class CalendarHeader extends Component {
         return (
             <div className='month'>
                 <ul>
-                    <li className='prev' onClick={ this.previousMonth }>&#10094;</li>
-                    <li className='next' onClick={ this.nextMonth }>&#10095;</li>
+                    <li className='prev' onClick={ this.goToPreviousMonth }>&#10094;</li>
+                    <li className='next' onClick={ this.goToNextMonth }>&#10095;</li>
                     <li className='month-details'>
-                        { this.getMonthString(this.props.month) }<br/>
+                        { this.getMonthName(this.props.month) }<br/>
                         <span>{ this.props.year }</span>
                     </li>
                 </ul>

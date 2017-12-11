@@ -17,30 +17,15 @@ class Calendar extends Component {
         this.changeState = this.changeState.bind(this);
     }
 
-    /**
-     * Calendar state changer
-     * @param  {object} state Object representing calendar state
-     * @return {void}
-     */
     changeState(state) {
         this.setState(state);
     }
 
-    /**
-     * Gets the number of days in the month
-     * @param  {integer} year  An integer representing the year
-     * @param  {integer} month An integer representing the month (0 - 11)
-     * @return {integer}       Number of days in the given month
-     */
     getDaysInMonth(year, month) {
         const isLeap = ((year % 4) === 0 && ((year % 100) !== 0 || (year % 400) === 0));
         return [31, (isLeap ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
     }
 
-    /**
-     * Generates calendar table body
-     * @return {React element} Table rows, i.e. weeks and days
-     */
     generateCalendarBody() {
         const date = new Date();
         date.setDate(1);
