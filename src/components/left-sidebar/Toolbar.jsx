@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Modal from '../../components/modal/Modal.jsx';
+import NewTaskBody from '../../components/modal/new-task/NewTaskBody.jsx';
+import NewTaskFooter from '../../components/modal/new-task/NewTaskFooter.jsx';
+import SyncBody from '../../components/modal/sync/SyncBody.jsx';
+import SyncFooter from '../../components/modal/sync/SyncFooter.jsx';
 
 import '../../styles/components/left-sidebar/toolbar.css';
 
@@ -17,6 +21,11 @@ class Toolbar extends Component {
     }
 
     toggleNewTask() {
+        if (!this.state.newTaskVisible)
+            document.addEventListener('click', this.toggleNewTask, false);
+        else
+            document.removeEventListener('click', this.toggleNewTask, false);
+
         this.setState({
             newTaskVisible: this.state.newTaskVisible ? false : true,
             syncVisible: this.state.syncVisible
@@ -24,6 +33,11 @@ class Toolbar extends Component {
     }
 
     toggleSync() {
+        if (!this.state.syncVisible)
+            document.addEventListener('click', this.toggleSync, false);
+        else
+            document.removeEventListener('click', this.toggleSync, false);
+
         this.setState({
             newTaskVisible: this.state.newTaskVisible,
             syncVisible: this.state.syncVisible ? false : true
@@ -43,8 +57,18 @@ class Toolbar extends Component {
                         <i className='fa fa-refresh' aria-hidden='true'></i>
                     </li>
                 </ul>
-                <Modal visible={ this.state.newTaskVisible } title='New task' body='' footer='' close={ this.toggleNewTask }/>
-                <Modal visible={ this.state.syncVisible } title='Sync' body='' footer='' close={ this.toggleSync }/>
+
+                <Modal visible={ this.state.newTaskVisible }
+                       title='New task'
+                       body={ <NewTaskBody/> }
+                       footer={ <NewTaskFooter/> }
+                       close={ this.toggleNewTask }/>
+
+                <Modal visible={ this.state.syncVisible }
+                       title='Sync'
+                       body={ <SyncBody/> }
+                       footer={ <SyncFooter/> }
+                       close={ this.toggleSync }/>
             </aside>
         );
     }
