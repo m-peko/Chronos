@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     background: rgb(36, 39, 46);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .logo {

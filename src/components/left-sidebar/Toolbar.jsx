@@ -27,8 +27,7 @@ class Toolbar extends Component {
             document.removeEventListener('click', this.toggleNewTask, false);
 
         this.setState({
-            newTaskVisible: this.state.newTaskVisible ? false : true,
-            syncVisible: this.state.syncVisible
+            newTaskVisible: this.state.newTaskVisible ? false : true
         });
     }
 
@@ -39,7 +38,6 @@ class Toolbar extends Component {
             document.removeEventListener('click', this.toggleSync, false);
 
         this.setState({
-            newTaskVisible: this.state.newTaskVisible,
             syncVisible: this.state.syncVisible ? false : true
         });
     }

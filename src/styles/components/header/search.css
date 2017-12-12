@@ -6,6 +6,7 @@
 }
 
 .search input#search {
+    outline: none;
     width: 500px;
     height: 35px;
     background: rgb(242, 242, 242);
@@ -15,7 +16,7 @@
     color: rgb(0, 0, 0);
     margin-top: 10px;
     padding-left: 30px;
-    border-radius: 3px;
+    border-radius: 1px;
 }
 
 .search .search-icon {
@@ -24,6 +25,35 @@
     left: 7px;
     font-size: 15px;
     color: rgb(79, 91, 102);
+}
+
+.search-filter {
+    display: none;
+    position: absolute;
+    width: 500px;
+    background-color: rgb(249, 249, 249);
+    list-style-type: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0;
+    cursor: default;
+    border-radius: 1px;
+    z-index: 10;
+    top: 50px;
+    left: 0;
+    right: 0;
+}
+
+.search input:focus + .search-filter {
+  display: block;
+}
+
+.search-filter > li {
+    border-left: 5px solid rgb(249, 249, 249);
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.search-filter > li:last-child {
+    border-bottom: none;
 }
 
 @media screen and (max-width: 900px) {

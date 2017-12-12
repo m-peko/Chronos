@@ -9,7 +9,7 @@ const Header = (props) => {
     return (
         <header className='item header'>
             <img src='images/chronos.png' className='logo' alt='Chronos'/>
-            <Search/>
+            <Search tasks={ props.tasks }/>
             <MobileToolbar/>
             <Profile user={ props.user }/>
         </header>

@@ -18,7 +18,6 @@ const CalendarHeader = (props) => {
             });
         } else {
             props.changeState({
-                year: props.year,
                 month: props.month - 1
             });
         }
@@ -32,7 +31,6 @@ const CalendarHeader = (props) => {
             });
         } else {
             props.changeState({
-                year: props.year,
                 month: props.month + 1
             });
         }

@@ -1,0 +1,37 @@
+.search-item {
+    text-align: left;
+    font-weight: lighter;
+    height: 60px;
+}
+
+.search-item-title {
+    font-size: 18px;
+    padding: 0px 10px;
+}
+
+.search-item-hours {
+    font-size: 18px;
+    float: right;
+    padding-right: 10px;
+}
+
+.search-item-category-location {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.blue {
+    border-left: 5px solid rgb(0, 116, 217) !important;
+}
+
+.orange {
+    border-left: 5px solid rgb(252, 192, 44) !important;
+}
+
+.red {
+    border-left: 5px solid rgb(255, 65, 54) !important;
+}
+
+.green {
+    border-left: 5px solid rgb(61, 153, 112) !important;
+}
