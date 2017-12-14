@@ -90,7 +90,7 @@ class Calendar extends Component {
 
     render() {
         return (
-            <aside className='item aside-right'>
+            <aside className={ this.props.calendar ? 'item aside-right visible' : 'item aside-right' }>
                 <CalendarHeader year={ this.state.year } month={ this.state.month } changeState={ this.changeState }/>
                 <table className='weeks'>
                     <thead>

@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 import '../../styles/components/main/schedule.css';
 
 class Schedule extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
-            <main className='item main'>
+            <main className={ this.props.schedule ? 'item main' : 'item main hidden' }>
                 <table>
                     <thead>
                         <tr>

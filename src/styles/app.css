@@ -46,9 +46,22 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
+    .aside-right {
+        margin: auto;
+        width: 90%;
+    }
+
     .aside-left,
     .aside-right {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+
+    .hidden {
         display: none;
     }
 }

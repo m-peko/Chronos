@@ -20,9 +20,9 @@ class Search extends Component {
 
         if (event.target.value !== '') {
             tasks = this.state.tasks;
-            tasks = tasks.filter(task => {
-                return task.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1;
-            });
+            tasks = tasks.filter(task =>
+                task.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
+            );
         }
 
         this.setState({

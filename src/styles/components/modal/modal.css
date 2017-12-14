@@ -72,3 +72,9 @@
 .visible {
     display: block;
 }
+
+@media screen and (max-width: 900px) {
+    .modal-content {
+        width: 90%;
+    }
+}

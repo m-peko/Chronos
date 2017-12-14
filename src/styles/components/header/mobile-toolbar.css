@@ -11,6 +11,13 @@
     text-align: center;
     padding: 16px;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.mobile-toolbar > li:hover,
+.mobile-toolbar > .tool-active {
+    color: rgb(252, 192, 44);
+    background-color: rgb(23, 26, 31);
 }
 
 @media screen and (max-width: 900px) {

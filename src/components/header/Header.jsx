@@ -10,7 +10,10 @@ const Header = (props) => {
         <header className='item header'>
             <img src='images/chronos.png' className='logo' alt='Chronos'/>
             <Search tasks={ props.tasks }/>
-            <MobileToolbar/>
+            <MobileToolbar tools={ props.tools }
+                           toggleNewTask={ props.toggleNewTask }
+                           toggleSync={ props.toggleSync }
+                           toggleCalendar={ props.toggleCalendar }/>
             <Profile user={ props.user }/>
         </header>
     );
