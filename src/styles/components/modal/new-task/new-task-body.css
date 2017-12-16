@@ -1,0 +1,111 @@
+.new-task-body {
+    padding: 20px;
+}
+
+.col-15 {
+    float: left;
+    width: 15%;
+    margin: 6px;
+}
+
+.col-60 {
+    float: left;
+    width: 60%;
+    margin: 6px;
+}
+
+input[type=text],
+input[type=date],
+input[type=number],
+select{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.label-margin {
+    margin-left: 35px;
+}
+
+.row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+    display:none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(252, 192, 44);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(252, 192, 44);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .col-15,
+    .col-60 {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .label-margin {
+        margin: 0;
+    }
+}
