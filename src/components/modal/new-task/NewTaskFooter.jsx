@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import '../../../styles/components/modal/new-task/new-task-footer.css';
-
-class NewTaskFooter extends Component {
-    render() {
-        return (
-            <p>NewTaskFooter</p>
-        );
-    }
-}
+const NewTaskFooter = (props) => {
+    return (
+        <div className='modal-footer'>
+            <button className='app-light-btn'>Cancel</button>
+            <button className='app-btn'>Add</button>
+        </div>
+    );
+};
 
 export default NewTaskFooter;

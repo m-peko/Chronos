@@ -1,7 +1,7 @@
 import React from 'react';
 import ProfileDetails from './ProfileDetails';
 
-import '../../styles/components/header/profile.css';
+import '../../../styles/components/header/profile/profile.css';
 
 const Profile = (props) => {
     return (

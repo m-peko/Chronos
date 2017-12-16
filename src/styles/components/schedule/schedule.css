@@ -24,7 +24,7 @@
 	border: 1px solid rgb(217, 217, 217);
     position: relative;
 	height: 45px;
-	cursor: pointer;
+	cursor: default;
 }
 
 .main > table tr:last-child td {

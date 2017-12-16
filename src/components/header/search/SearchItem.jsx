@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/components/header/search-item.css';
+import '../../../styles/components/header/search/search-item.css';
 
 const SearchItem = (props) => {
     return (

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CalendarHeader from './CalendarHeader';
 import Week from './Week';
 
-import '../../styles/components/right-sidebar/calendar.css';
+import '../../styles/components/calendar/calendar.css';
 
 class Calendar extends Component {
     constructor() {
@@ -90,7 +90,7 @@ class Calendar extends Component {
 
     render() {
         return (
-            <aside className={ this.props.calendar ? 'item aside-right visible' : 'item aside-right' }>
+            <aside className={ this.props.show ? 'item aside-right visible' : 'item aside-right' }>
                 <CalendarHeader year={ this.state.year } month={ this.state.month } changeState={ this.changeState }/>
                 <table className='weeks'>
                     <thead>

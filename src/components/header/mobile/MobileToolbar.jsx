@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/components/header/mobile-toolbar.css';
+import '../../../styles/components/header/mobile/mobile-toolbar.css';
 
 const MobileToolbar = (props) => {
     return (
@@ -8,15 +8,15 @@ const MobileToolbar = (props) => {
             <li>
                 <i className='fa fa-search' aria-hidden='true'/>
             </li>
-            <li className={ props.tools.newTask ? 'tool-active' : '' }
-                onClick={ props.toggleNewTask }>
+            <li className={ props.isOpen.newTask ? 'tool-active' : '' }
+                onClick={ props.toggleNewTaskModal }>
                 <i className='fa fa-plus' aria-hidden='true'/>
             </li>
-            <li className={ props.tools.sync ? 'tool-active' : '' }
-                onClick={ props.toggleSync }>
+            <li className={ props.isOpen.sync ? 'tool-active' : '' }
+                onClick={ props.toggleSyncModal }>
                 <i className='fa fa-refresh' aria-hidden='true'/>
             </li>
-            <li className={ props.tools.calendar ? 'tool-active' : '' }
+            <li className={ props.isOpen.calendar ? 'tool-active' : '' }
                 onClick={ props.toggleCalendar }>
                 <i className='fa fa-calendar' aria-hidden='true'/>
             </li>

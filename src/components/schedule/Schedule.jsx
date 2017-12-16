@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../../styles/components/main/schedule.css';
+import '../../styles/components/schedule/schedule.css';
 
 class Schedule extends Component {
     constructor(props) {
@@ -8,8 +8,11 @@ class Schedule extends Component {
     }
 
     render() {
+        if (!this.props.show)
+            return null;
+
         return (
-            <main className={ this.props.schedule ? 'item main' : 'item main hidden' }>
+            <main className='item main'>
                 <table>
                     <thead>
                         <tr>

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import '../../../styles/components/modal/sync/sync-body.css';
 
-class SyncBody extends Component {
-    render() {
-        return (
-            <p>SyncBody</p>
-        );
-    }
-}
+const SyncBody = (props) => {
+    return (
+        <div className='modal-body'>
+            <p>Sync body</p>
+        </div>
+    );
+};
 
 export default SyncBody;

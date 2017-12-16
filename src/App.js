@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from './components/header/Header';
-import Schedule from './components/main/Schedule';
-import Toolbar from './components/left-sidebar/Toolbar';
-import Calendar from './components/right-sidebar/Calendar';
+import Schedule from './components/schedule/Schedule';
+import Toolbar from './components/toolbar/Toolbar';
+import Calendar from './components/calendar/Calendar';
 
 /* Modals */
 import Modal from './components/modal/Modal.jsx';
@@ -24,7 +24,7 @@ class App extends Component {
         this.state = {
             user: User,
             tasks: Tasks,
-            items: {
+            isOpen: {
                 schedule: true,
                 search: false,
                 newTask: false,
@@ -33,42 +33,38 @@ class App extends Component {
             }
         };
 
-        this.toggleNewTask = this.toggleNewTask.bind(this);
-        this.toggleSync = this.toggleSync.bind(this);
+        this.toggleNewTaskModal = this.toggleNewTaskModal.bind(this);
+        this.toggleSyncModal = this.toggleSyncModal.bind(this);
         this.toggleCalendar = this.toggleCalendar.bind(this);
     }
 
-    toggleNewTask() {
-        if (!this.state.items.newTask)
-            document.addEventListener('click', this.toggleNewTask, false);
-        else
-            document.removeEventListener('click', this.toggleNewTask, false);
-
+    toggleNewTaskModal(event) {
         this.setState({
-            items: {
-                newTask: this.state.items.newTask ? false : true
+            isOpen: {
+                schedule: this.state.isOpen.schedule,
+                search: this.state.isOpen.search,
+                newTask: this.state.isOpen.newTask ? false : true,
+                calendar: this.state.isOpen.calendar
             }
         });
     }
 
-    toggleSync() {
-        if (!this.state.items.sync)
-            document.addEventListener('click', this.toggleSync, false);
-        else
-            document.removeEventListener('click', this.toggleSync, false);
-
+    toggleSyncModal(event) {
         this.setState({
-            items: {
-                sync: this.state.items.sync ? false : true
+            isOpen: {
+                schedule: this.state.isOpen.schedule,
+                search: this.state.isOpen.search,
+                sync: this.state.isOpen.sync ? false : true,
+                calendar: this.state.isOpen.calendar
             }
         });
     }
 
     toggleCalendar() {
         this.setState({
-            items: {
-                schedule: !this.state.items.schedule,
-                calendar: !this.state.items.calendar
+            isOpen: {
+                schedule: !this.state.isOpen.schedule,
+                calendar: !this.state.isOpen.calendar
             }
         });
     }
@@ -78,30 +74,31 @@ class App extends Component {
             <div className='wrapper'>
                 <Header user={ this.state.user }
                         tasks={ this.state.tasks }
-                        tools={ this.state.items }
-                        toggleNewTask={ this.toggleNewTask }
-                        toggleSync={ this.toggleSync }
+                        isOpen={ this.state.isOpen }
+                        toggleNewTaskModal={ this.toggleNewTaskModal }
+                        toggleSyncModal={ this.toggleSyncModal }
                         toggleCalendar={ this.toggleCalendar }/>
 
-                <Schedule schedule={ this.state.items.schedule }/>
+                <Schedule show={ this.state.isOpen.schedule }
+                          tasks={ this.state.tasks }/>
 
-                <Toolbar tools={ this.state.items }
-                         toggleNewTask={ this.toggleNewTask }
-                         toggleSync={ this.toggleSync }/>
+                <Toolbar isOpen={ this.state.isOpen }
+                         toggleNewTaskModal={ this.toggleNewTaskModal }
+                         toggleSyncModal={ this.toggleSyncModal }/>
 
-                <Calendar calendar={ this.state.items.calendar }/>
+                <Calendar show={ this.state.isOpen.calendar }/>
 
-                <Modal visible={ this.state.items.newTask }
+                <Modal show={ this.state.isOpen.newTask }
                        title='New task'
                        body={ <NewTaskBody/> }
                        footer={ <NewTaskFooter/> }
-                       close={ this.toggleNewTask }/>
+                       onClose={ this.toggleNewTaskModal }/>
 
-                <Modal visible={ this.state.items.sync }
+                <Modal show={ this.state.isOpen.sync }
                        title='Sync'
                        body={ <SyncBody/> }
                        footer={ <SyncFooter/> }
-                       close={ this.toggleSync }/>
+                       onClose={ this.toggleSyncModal }/>
             </div>
         );
     }

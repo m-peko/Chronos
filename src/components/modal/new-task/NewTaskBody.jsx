@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import '../../../styles/components/modal/new-task/new-task-body.css';
 
-class NewTaskBody extends Component {
-    render() {
-        return (
-            <p>NewTaskBody</p>
-        );
-    }
-}
+const NewTaskBody = (props) => {
+    return (
+        <div className='modal-body'>
+            <p></p>
+        </div>
+    );
+};
 
 export default NewTaskBody;

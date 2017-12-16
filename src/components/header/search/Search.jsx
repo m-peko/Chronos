@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchItem from './SearchItem';
 
-import '../../styles/components/header/search.css';
+import '../../../styles/components/header/search/search.css';
 
 class Search extends Component {
     constructor(props) {

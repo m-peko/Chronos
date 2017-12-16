@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/components/right-sidebar/calendar-header.css';
+import '../../styles/components/calendar/calendar-header.css';
 
 const CalendarHeader = (props) => {
 

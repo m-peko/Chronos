@@ -13,6 +13,21 @@
     background-color: rgb(251, 181, 4) !important;
 }
 
+.app-light-btn {
+    border: 1px solid rgb(252, 192, 44);
+    border-radius: 1px;
+    background: rgb(255, 255, 255);
+    color: rgb(36, 39, 46);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.app-light-btn:hover,
+.app-light-btn:active,
+.app-light-btn:focus {
+    background-color: rgb(242, 242, 242) !important;
+}
+
 .item {
     text-align: center;
 }
