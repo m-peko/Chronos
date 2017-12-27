@@ -6,10 +6,8 @@ import Calendar from './components/calendar/Calendar';
 
 /* Modals */
 import Modal from './components/modal/Modal.jsx';
-import NewTaskBody from './components/modal/new-task/NewTaskBody.jsx';
-import NewTaskFooter from './components/modal/new-task/NewTaskFooter.jsx';
-import SyncBody from './components/modal/sync/SyncBody.jsx';
-import SyncFooter from './components/modal/sync/SyncFooter.jsx';
+import NewTaskForm from './components/modal/new-task/NewTaskForm.jsx';
+import SyncForm from './components/modal/sync/SyncForm.jsx';
 
 /* Static data */
 import User from './data/User.json';
@@ -24,6 +22,7 @@ class App extends Component {
         this.state = {
             user: User,
             tasks: Tasks,
+            syncs: [],
             isOpen: {
                 schedule: true,
                 search: false,
@@ -36,6 +35,9 @@ class App extends Component {
         this.toggleNewTaskModal = this.toggleNewTaskModal.bind(this);
         this.toggleSyncModal = this.toggleSyncModal.bind(this);
         this.toggleCalendar = this.toggleCalendar.bind(this);
+
+        this.addTask = this.addTask.bind(this);
+        this.addSync = this.addSync.bind(this);
     }
 
     toggleNewTaskModal(event) {
@@ -69,6 +71,18 @@ class App extends Component {
         });
     }
 
+    addTask(task) {
+        this.setState({
+            tasks: [...this.state.tasks, task]
+        });
+    }
+
+    addSync(sync) {
+        this.setState({
+            syncs: [...this.state.syncs, sync]
+        });
+    }
+
     render() {
         return (
             <div className='wrapper'>
@@ -90,14 +104,14 @@ class App extends Component {
 
                 <Modal show={ this.state.isOpen.newTask }
                        title='New task'
-                       body={ <NewTaskBody/> }
-                       footer={ <NewTaskFooter/> }
+                       content={ <NewTaskForm onSubmit={ this.addTask }
+                                              close={ this.toggleNewTaskModal }/> }
                        onClose={ this.toggleNewTaskModal }/>
 
                 <Modal show={ this.state.isOpen.sync }
                        title='Sync'
-                       body={ <SyncBody/> }
-                       footer={ <SyncFooter/> }
+                       content={ <SyncForm onSubmit={ this.addSync }
+                                           close={ this.toggleSyncModal }/> }
                        onClose={ this.toggleSyncModal }/>
             </div>
         );

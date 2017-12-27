@@ -1,44 +1,5 @@
-.new-task-body {
+.new-task-form {
     padding: 20px;
-}
-
-.col-15 {
-    float: left;
-    width: 15%;
-    margin: 6px;
-}
-
-.col-60 {
-    float: left;
-    width: 60%;
-    margin: 6px;
-}
-
-input[type=text],
-input[type=date],
-input[type=number],
-select{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 1px;
-    box-sizing: border-box;
-    resize: vertical;
-}
-
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-}
-
-.label-margin {
-    margin-left: 35px;
-}
-
-.row:after {
-    content: '';
-    display: table;
-    clear: both;
 }
 
 .switch {
@@ -96,16 +57,4 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-@media (max-width: 600px) {
-    .col-15,
-    .col-60 {
-        width: 100%;
-        margin-top: 0;
-    }
-
-    .label-margin {
-        margin: 0;
-    }
 }

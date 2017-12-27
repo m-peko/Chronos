@@ -30,8 +30,10 @@ class Modal extends Component {
     handleClickOutsideModal(event) {
         if (this.modalRef && this.modalRef.contains(event.target) &&
             this.contentRef && !this.contentRef.contains(event.target))
+        {
             /* Click outside modal component */
             this.props.onClose();
+        }
     }
 
     render() {
@@ -45,8 +47,7 @@ class Modal extends Component {
                         <span className='close' onClick={ this.props.onClose }>&times;</span>
                         <p>{ this.props.title }</p>
                     </div>
-                    { this.props.body }
-                    { this.props.footer }
+                    { this.props.content }
                 </div>
             </div>
         );
