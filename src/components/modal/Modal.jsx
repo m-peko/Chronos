@@ -29,8 +29,7 @@ class Modal extends Component {
 
     handleClickOutsideModal(event) {
         if (this.modalRef && this.modalRef.contains(event.target) &&
-            this.contentRef && !this.contentRef.contains(event.target))
-        {
+            this.contentRef && !this.contentRef.contains(event.target)) {
             /* Click outside modal component */
             this.props.onClose();
         }

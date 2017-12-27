@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../../../styles/components/modal/sync/sync-form.css';
 
 const initialState = {
-    sync: ''
+    sync: 'outlook'
 };
 
 class SyncForm extends Component {
@@ -19,7 +19,7 @@ class SyncForm extends Component {
 
     handleChange(event) {
         const name = event.target.name;
-        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        const value = event.target.value;
 
         this.setState({
             [name]: value
@@ -27,7 +27,7 @@ class SyncForm extends Component {
     }
 
     handleSubmit() {
-        this.props.onSubmit(this.state);
+        this.props.onSubmit(this.state.sync);
         this.props.close();
     }
 
@@ -36,6 +36,7 @@ class SyncForm extends Component {
     }
 
     render() {
+        console.log(this.state);
         return (
             <div>
                 <div className='modal-body sync-form'>

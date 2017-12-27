@@ -15,6 +15,12 @@ class Search extends Component {
         this.filterTasks = this.filterTasks.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            tasks: nextProps.tasks
+        });
+    }
+
     filterTasks(event) {
         let tasks = [];
 

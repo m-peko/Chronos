@@ -84,6 +84,7 @@ class App extends Component {
     }
 
     render() {
+        console.log(this.state.syncs);
         return (
             <div className='wrapper'>
                 <Header user={ this.state.user }

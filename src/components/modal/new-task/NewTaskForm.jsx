@@ -10,7 +10,7 @@ const initialState = {
     category: 'Chilling out',
     location: '',
     repetition: '',
-    color: '',
+    color: 'blue',
     reminder: false,
     reminderTimes: []
 };
@@ -27,8 +27,17 @@ class NewTaskForm extends Component {
     }
 
     handleChange(event) {
-        const name = event.target.name;
-        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        let name = event.target.name;
+        let value = '';
+
+        if (event.target.type === 'checkbox') {
+            value = event.target.checked;
+        } else if (event.target.tagName.toLowerCase() === 'div') {
+            name = event.target.dataset.name;
+            value = event.target.dataset.value;
+        } else {
+            value = event.target.value;
+        }
 
         this.setState({
             [name]: value
@@ -122,6 +131,25 @@ class NewTaskForm extends Component {
                                        onChange={ this.handleChange }/>
                                 <span className='slider round'></span>
                             </label>
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <div className='col-15'>
+                            <label htmlFor='reminder'>Color</label>
+                        </div>
+                        <div className='col-60'>
+                            <div data-name='color' data-value='blue'
+                                 onClick={ this.handleChange }
+                                 className={ this.state.color === 'blue' ? 'color-box blue-box active-box' : 'color-box blue-box' }/>
+                            <div data-name='color' data-value='orange'
+                                 onClick={ this.handleChange }
+                                 className={ this.state.color === 'orange' ? 'color-box orange-box active-box' : 'color-box orange-box' }/>
+                            <div data-name='color' data-value='red'
+                                 onClick={ this.handleChange }
+                                 className={ this.state.color === 'red' ? 'color-box red-box active-box' : 'color-box red-box' }/>
+                            <div data-name='color' data-value='green'
+                                 onClick={ this.handleChange }
+                                 className={ this.state.color === 'green' ? 'color-box green-box active-box' : 'color-box green-box' }/>
                         </div>
                     </div>
                 </div>
