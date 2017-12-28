@@ -11,7 +11,7 @@ class Schedule extends Component {
 
     render() {
         if (!this.props.show) {
-            return null;    
+            return null;
         }
 
         return (

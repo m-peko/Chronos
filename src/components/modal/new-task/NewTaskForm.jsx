@@ -5,8 +5,8 @@ import '../../../styles/components/modal/new-task/new-task-form.css';
 const initialState = {
     title: '',
     date: '',
-    from: '',
-    to: '',
+    from: '07:00',
+    to: '07:30',
     category: 'Chilling out',
     location: '',
     repetition: '',
@@ -59,48 +59,48 @@ class NewTaskForm extends Component {
             <div>
                 <div className='modal-body new-task-form'>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='title'>Title</label>
                         </div>
-                        <div className='col-60'>
+                        <div className='col-70'>
                             <input type='text' id='title' name='title' placeholder='Task title...'
                                    value={ this.state.title }
                                    onChange={ this.handleChange }/>
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='date'>Date</label>
                         </div>
-                        <div className='col-60'>
+                        <div className='col-70'>
                             <input type='date' id='date' name='date' placeholder='Task date...'
                                    value={ this.state.date }
                                    onChange={ this.handleChange }/>
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='from'>From</label>
                         </div>
-                        <div className='col-15'>
-                            <input type='number' id='from' name='from' min='0' max='23.59' step='0.01'
+                        <div className='col-25'>
+                            <input type='time' id='from' name='from'
                                    value={ this.state.from }
                                    onChange={ this.handleChange }/>
                         </div>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='to' className='label-margin'>To</label>
                         </div>
-                        <div className='col-15'>
-                            <input type='number' id='to' name='to' min='0' max='23.59' step='0.01'
+                        <div className='col-25'>
+                            <input type='time' id='to' name='to'
                                    value={ this.state.to }
                                    onChange={ this.handleChange }/>
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='category'>Category</label>
                         </div>
-                        <div className='col-60'>
+                        <div className='col-70'>
                             <select id='category' name='category'
                                     value={ this.state.category }
                                     onChange={ this.handleChange }>
@@ -111,20 +111,20 @@ class NewTaskForm extends Component {
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='location'>Location</label>
                         </div>
-                        <div className='col-60'>
+                        <div className='col-70'>
                             <input type='text' id='location' name='location' placeholder='Task location...'
                                    value={ this.state.location }
                                    onChange={ this.handleChange }/>
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='reminder'>Reminder</label>
                         </div>
-                        <div className='col-60'>
+                        <div className='col-70'>
                             <label className='switch'>
                                 <input type='checkbox' name='reminder'
                                        value={ this.state.reminder }
@@ -134,10 +134,10 @@ class NewTaskForm extends Component {
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='reminder'>Color</label>
                         </div>
-                        <div className='col-60'>
+                        <div className='col-70'>
                             <div data-name='color' data-value='blue'
                                  onClick={ this.handleChange }
                                  className={ this.state.color === 'blue' ? 'color-box blue-box active-box' : 'color-box blue-box' }/>

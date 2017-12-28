@@ -82,21 +82,28 @@
 
 /* Modal content */
 
-.col-15 {
+.col-20 {
     float: left;
-    width: 15%;
-    margin: 6px;
+    width: 20%;
+    margin: 6px 0;
 }
 
-.col-60 {
+.col-25 {
     float: left;
-    width: 60%;
-    margin: 6px;
+    width: 25%;
+    margin: 6px 0;
+}
+
+.col-70 {
+    float: left;
+    width: 70%;
+    margin: 6px 0;
 }
 
 input[type=text],
 input[type=date],
 input[type=number],
+input[type=time],
 select{
     width: 100%;
     padding: 12px;
@@ -132,8 +139,9 @@ label {
         width: 90%;
     }
 
-    .col-15,
-    .col-60 {
+    .col-20,
+    .col-25,
+    .col-70 {
         width: 100%;
         margin-top: 0;
     }

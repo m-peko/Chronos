@@ -41,10 +41,10 @@ class SyncForm extends Component {
             <div>
                 <div className='modal-body sync-form'>
                     <div className='row'>
-                        <div className='col-15'>
+                        <div className='col-20'>
                             <label htmlFor='sync'>Synchronize</label>
                         </div>
-                        <div className='col-60'>
+                        <div className='col-70'>
                             <select id='sync' name='sync'
                                     value={ this.state.sync }
                                     onChange={ this.handleChange }>

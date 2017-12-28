@@ -11,9 +11,11 @@ const Header = (props) => {
             <img src='images/chronos.png' className='logo' alt='Chronos'/>
             <Search tasks={ props.tasks }/>
             <MobileToolbar isOpen={ props.isOpen }
+                           toggleSearch={ props.toggleSearch }
                            toggleNewTaskModal={ props.toggleNewTaskModal }
                            toggleSyncModal={ props.toggleSyncModal }
-                           toggleCalendar={ props.toggleCalendar }/>
+                           toggleCalendar={ props.toggleCalendar }
+                           toggleProfile={ props.toggleProfile }/>
             <Profile user={ props.user }/>
         </header>
     );

@@ -28,36 +28,53 @@ class App extends Component {
                 search: false,
                 newTask: false,
                 sync: false,
-                calendar: false
+                calendar: false,
+                profile: false
             }
         };
 
+        this.toggleSearch = this.toggleSearch.bind(this);
         this.toggleNewTaskModal = this.toggleNewTaskModal.bind(this);
         this.toggleSyncModal = this.toggleSyncModal.bind(this);
         this.toggleCalendar = this.toggleCalendar.bind(this);
+        this.toggleProfile = this.toggleProfile.bind(this);
 
         this.addTask = this.addTask.bind(this);
         this.addSync = this.addSync.bind(this);
     }
 
-    toggleNewTaskModal(event) {
+    toggleSearch() {
         this.setState({
             isOpen: {
                 schedule: this.state.isOpen.schedule,
-                search: this.state.isOpen.search,
-                newTask: this.state.isOpen.newTask ? false : true,
-                calendar: this.state.isOpen.calendar
+                search: !this.state.isOpen.search,
+                newTask: this.state.isOpen.newTask,
+                calendar: this.state.isOpen.calendar,
+                profile: this.state.isOpen.profile
             }
         });
     }
 
-    toggleSyncModal(event) {
+    toggleNewTaskModal() {
         this.setState({
             isOpen: {
                 schedule: this.state.isOpen.schedule,
                 search: this.state.isOpen.search,
-                sync: this.state.isOpen.sync ? false : true,
-                calendar: this.state.isOpen.calendar
+                newTask: !this.state.isOpen.newTask,
+                calendar: this.state.isOpen.calendar,
+                profile: this.state.isOpen.profile
+            }
+        });
+    }
+
+    toggleSyncModal() {
+        this.setState({
+            isOpen: {
+                schedule: this.state.isOpen.schedule,
+                search: this.state.isOpen.search,
+                sync: !this.state.isOpen.sync,
+                calendar: this.state.isOpen.calendar,
+                profile: this.state.isOpen.profile
             }
         });
     }
@@ -67,6 +84,18 @@ class App extends Component {
             isOpen: {
                 schedule: !this.state.isOpen.schedule,
                 calendar: !this.state.isOpen.calendar
+            }
+        });
+    }
+
+    toggleProfile() {
+        this.setState({
+            isOpen: {
+                schedule: this.state.isOpen.schedule,
+                search: this.state.isOpen.search,
+                sync: this.state.isOpen.sync,
+                calendar: this.state.isOpen.calendar,
+                profile: !this.state.isOpen.profile
             }
         });
     }
@@ -84,15 +113,16 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.syncs);
         return (
             <div className='wrapper'>
                 <Header user={ this.state.user }
                         tasks={ this.state.tasks }
                         isOpen={ this.state.isOpen }
+                        toggleSearch={ this.toggleSearch }
                         toggleNewTaskModal={ this.toggleNewTaskModal }
                         toggleSyncModal={ this.toggleSyncModal }
-                        toggleCalendar={ this.toggleCalendar }/>
+                        toggleCalendar={ this.toggleCalendar }
+                        toggleProfile={ this.toggleProfile }/>
 
                 <Schedule show={ this.state.isOpen.schedule }
                           tasks={ this.state.tasks }/>

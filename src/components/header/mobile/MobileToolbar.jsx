@@ -5,7 +5,8 @@ import '../../../styles/components/header/mobile/mobile-toolbar.css';
 const MobileToolbar = (props) => {
     return (
         <ul className='mobile-toolbar'>
-            <li>
+            <li className={ props.isOpen.search ? 'tool-active' : '' }
+                onClick={ props.toggleSearch }>
                 <i className='fa fa-search' aria-hidden='true'/>
             </li>
             <li className={ props.isOpen.newTask ? 'tool-active' : '' }
@@ -20,7 +21,8 @@ const MobileToolbar = (props) => {
                 onClick={ props.toggleCalendar }>
                 <i className='fa fa-calendar' aria-hidden='true'/>
             </li>
-            <li>
+            <li className={ props.isOpen.profile ? 'tool-active' : '' }
+                onClick={ props.toggleProfile }>
                 <i className='fa fa-user' aria-hidden='true'/>
             </li>
         </ul>
