@@ -62,7 +62,7 @@ class App extends Component {
                 search: this.state.isOpen.search,
                 newTask: !this.state.isOpen.newTask,
                 calendar: this.state.isOpen.calendar,
-                profile: this.state.isOpen.profile
+                profile: false
             }
         });
     }
@@ -74,7 +74,7 @@ class App extends Component {
                 search: this.state.isOpen.search,
                 sync: !this.state.isOpen.sync,
                 calendar: this.state.isOpen.calendar,
-                profile: this.state.isOpen.profile
+                profile: false
             }
         });
     }
@@ -93,6 +93,7 @@ class App extends Component {
             isOpen: {
                 schedule: this.state.isOpen.schedule,
                 search: this.state.isOpen.search,
+                newTask: this.state.isOpen.newTask,
                 sync: this.state.isOpen.sync,
                 calendar: this.state.isOpen.calendar,
                 profile: !this.state.isOpen.profile

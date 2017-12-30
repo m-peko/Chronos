@@ -1,0 +1,118 @@
+.schedule .tasks .single-task {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    float: left;
+    height: 100px;
+    width: 70%;
+    max-width: 300px;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+    -webkit-transition: opacity .2s, background .2s;
+    transition: opacity .2s, background .2s;
+    cursor: pointer;
+}
+
+.schedule .tasks .single-task:last-of-type {
+    margin-right: 5%;
+}
+
+.schedule .tasks .single-task a {
+    display: block;
+    height: 100%;
+    padding: .8em;
+}
+
+@media only screen and (min-width: 550px) {
+    .schedule .tasks .single-task {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .schedule .tasks .single-task {
+        position: absolute;
+        z-index: 3;
+        width: calc(100% + 2px);
+        left: -1px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+        height: auto;
+        max-width: none;
+        margin-right: 0;
+        cursor: pointer;
+    }
+    .schedule .tasks .single-task a {
+        padding: 1.2em;
+    }
+    .schedule .tasks .single-task:last-of-type {
+        margin-right: 0;
+    }
+    .schedule .tasks .single-task.selected-task {
+        visibility: hidden;
+    }
+}
+
+
+.schedule.loading .tasks .single-task {
+    opacity: 0;
+}
+
+.schedule .task-title,
+.schedule .task-date {
+    display: block;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.schedule .task-title {
+    font-size: 1rem;
+}
+
+@media only screen and (min-width: 800px) {
+    .schedule .task-title {
+        font-size: 1rem;
+    }
+}
+
+.schedule .task-date {
+    font-size: 1rem;
+    opacity: .7;
+    line-height: 1.2;
+    margin-bottom: .2em;
+}
+
+.schedule .task-blue {
+    background: rgb(0, 116, 217);
+}
+
+.schedule .task-blue:hover {
+    background: rgb(0, 95, 179);
+}
+
+.schedule .task-orange {
+    background: rgb(252, 192, 44);
+}
+
+.schedule .task-orange:hover {
+    background: rgb(176, 127, 3);
+}
+
+.schedule .task-red {
+    background: rgb(255, 65, 54);
+}
+
+.schedule .task-red:hover {
+    background: rgb(179, 9, 0);
+}
+
+.schedule .task-green {
+    background: rgb(61, 153, 112);
+}
+
+.schedule .task-green:hover {
+    background: rgb(51, 128, 93);
+}

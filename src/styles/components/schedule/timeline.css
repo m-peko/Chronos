@@ -1,0 +1,49 @@
+.schedule .timeline {
+    display: none;
+}
+
+@media only screen and (min-width: 800px) {
+    .schedule .timeline {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding-top: 50px;
+    }
+    .schedule .timeline li {
+        position: relative;
+        height: 45px;
+        text-align: -webkit-match-parent;
+    }
+    .schedule .timeline li::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 17px);
+        height: 1px;
+        background: #EAEAEA;
+    }
+    .schedule .timeline li:last-of-type::after {
+        display: none;
+    }
+    .schedule .timeline li span {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .schedule .timeline li::after {
+        width: calc(100% - 82px);
+        left: 60px;
+    }
+    .schedule .timeline li span {
+        display: inline-block;
+        float: left;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}

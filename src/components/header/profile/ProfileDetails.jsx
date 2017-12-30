@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProfileDetails = (props) => {
     return (
-        <div className='profile-details'>
+        <div className={ props.showMobile ? 'profile-details mobile-profile' : 'profile-details' }>
             <div className='profile-details-img'>
                 <i className='fa fa-user-circle-o'></i>
             </div>
