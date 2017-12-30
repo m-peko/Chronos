@@ -83,7 +83,7 @@
     .schedule .tasks .tasks-group {
         width: 14%;
         float: left;
-        border: 1px solid #EAEAEA;
+        border: 1px solid rgb(234, 234, 234);
         margin-bottom: 0;
     }
     .schedule .tasks .tasks-group:not(:first-of-type) {
@@ -92,7 +92,7 @@
     .schedule .tasks .top-info {
         display: table;
         height: 50px;
-        border-bottom: 1px solid #EAEAEA;
+        border-bottom: 1px solid rgb(234, 234, 234);
         padding: 0;
     }
     .schedule .tasks .top-info > span {
@@ -325,7 +325,7 @@
         background: transparent;
     }
     .schedule .task-modal .close::after, .schedule .task-modal .close::before {
-        background: #222222;
+        background: rgb(34, 34, 34);
         height: 16px;
     }
 }

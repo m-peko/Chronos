@@ -24,7 +24,7 @@
         left: 0;
         width: calc(100% - 17px);
         height: 1px;
-        background: #EAEAEA;
+        background: rgb(234, 234, 234);
     }
     .schedule .timeline li:last-of-type::after {
         display: none;

@@ -29,7 +29,7 @@ class Schedule extends Component {
                                 <div className='top-info'><span>Tuesday</span></div>
 
                                 <ul>
-
+                                    <Task task={ this.props.tasks[1] }/>
                                 </ul>
                             </li>
 

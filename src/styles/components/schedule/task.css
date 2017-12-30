@@ -62,7 +62,6 @@
 .schedule .task-date {
     display: block;
     color: white;
-    font-weight: bold;
     font-size: 1em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

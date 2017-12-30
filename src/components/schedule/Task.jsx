@@ -11,12 +11,16 @@ const Task = (props) => {
         return parseInt(timeArr[0], 10) * 60 + parseInt(timeArr[1], 10);
     };
 
-    const taskTop = 45 * (getScheduleTimestamp(props.task.from) - 100) / 50;
-    const taskHeight = 45 * (getScheduleTimestamp(props.task.to) - getScheduleTimestamp(props.task.from)) / 50;
+    const slotHeight = 45;       /* Height of .top-info div */
+    const timelineStart = 420;   /* Value of getScheduleTimestamp function for 07:00 */
+    const timelineDuration = 60; /* An hour */
+
+    const taskTop = slotHeight * (getScheduleTimestamp(props.task.from) - timelineStart) / timelineDuration;
+    const taskHeight = slotHeight * (getScheduleTimestamp(props.task.to) - getScheduleTimestamp(props.task.from)) / timelineDuration;
 
     const style = {
-        top: taskTop,
-        height: taskHeight
+        top: (taskTop - 1) + 'px',
+        height: taskHeight + 'px'
     };
 
     return (

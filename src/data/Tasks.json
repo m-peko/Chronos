@@ -14,14 +14,14 @@
             15
         ]
     }, {
-        "title": "Artificial Intelligence",
+        "title": "CRO-SRB",
         "date": "2018-12-15",
         "from": "08:15",
         "to": "10:00",
         "category": "Lecture",
         "location": "FESB, Split, Croatia",
         "repetition": "weekly",
-        "color": "blue",
+        "color": "green",
         "reminder": true,
         "reminderTimes": [
             30,
