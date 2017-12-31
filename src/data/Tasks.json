@@ -1,7 +1,7 @@
 [
     {
         "title": "HCI",
-        "date": "2018-12-14",
+        "date": "2018-01-01",
         "from": "10:00",
         "to": "12:00",
         "category": "Lecture",
@@ -14,14 +14,14 @@
             15
         ]
     }, {
-        "title": "CRO-SRB",
+        "title": "Databases",
         "date": "2018-12-15",
         "from": "08:15",
         "to": "10:00",
         "category": "Lecture",
         "location": "FESB, Split, Croatia",
         "repetition": "weekly",
-        "color": "green",
+        "color": "blue",
         "reminder": true,
         "reminderTimes": [
             30,
@@ -30,8 +30,8 @@
     }, {
         "title": "Basketball",
         "date": "2018-12-17",
-        "from": "22:00",
-        "to": "23:00",
+        "from": "16:10",
+        "to": "17:50",
         "category": "Training",
         "location": "Solin, Croatia",
         "repetition": "",
@@ -41,9 +41,44 @@
             30
         ]
     }, {
+        "title": "Running",
+        "date": "2018-12-19",
+        "from": "13:00",
+        "to": "15:30",
+        "category": "Training",
+        "location": "Solin, Croatia",
+        "repetition": "",
+        "color": "orange",
+        "reminder": true,
+        "reminderTimes": [
+            30
+        ]
+    }, {
+        "title": "Comp. Graphics",
+        "date": "2018-12-20",
+        "from": "10:00",
+        "to": "12:30",
+        "category": "Lecture",
+        "location": "FESB, Split, Croatia",
+        "repetition": "",
+        "color": "blue",
+        "reminder": true,
+        "reminderTimes": []
+    }, {
+        "title": "Meeting",
+        "date": "2018-12-21",
+        "from": "13:00",
+        "to": "16:00",
+        "category": "Business",
+        "location": "Solin, Croatia",
+        "repetition": "",
+        "color": "green",
+        "reminder": true,
+        "reminderTimes": []
+    }, {
         "title": "Coffee",
         "date": "2018-12-18",
-        "from": "11:30",
+        "from": "09:30",
         "to": "12:30",
         "category": "Chilling out",
         "location": "Riva, Split, Croatia",
@@ -53,5 +88,16 @@
         "reminderTimes": [
             30
         ]
+    }, {
+        "title": "Friends and family",
+        "date": "2018-12-23",
+        "from": "09:30",
+        "to": "14:30",
+        "category": "Chilling out",
+        "location": "Split, Croatia",
+        "repetition": "",
+        "color": "red",
+        "reminder": true,
+        "reminderTimes": []
     }
 ]

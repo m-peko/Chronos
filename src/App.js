@@ -30,8 +30,11 @@ class App extends Component {
                 sync: false,
                 calendar: false,
                 profile: false
-            }
+            },
+            mobile: false
         };
+
+        this.resize = this.resize.bind(this);
 
         this.toggleSearch = this.toggleSearch.bind(this);
         this.toggleNewTaskModal = this.toggleNewTaskModal.bind(this);
@@ -41,6 +44,31 @@ class App extends Component {
 
         this.addTask = this.addTask.bind(this);
         this.addSync = this.addSync.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.resize);
+        this.resize();
+    }
+
+    resize() {
+        if (window.innerWidth > 760) {
+            this.setState({
+                isOpen: {
+                    schedule: true,
+                    search: false,
+                    newTask: false,
+                    sync: false,
+                    calendar: false,
+                    profile: false
+                },
+                mobile: false
+            });
+        } else {
+            this.setState({
+                mobile: true
+            });
+        }
     }
 
     toggleSearch() {
@@ -126,7 +154,8 @@ class App extends Component {
                         toggleProfile={ this.toggleProfile }/>
 
                 <Schedule show={ this.state.isOpen.schedule }
-                          tasks={ this.state.tasks }/>
+                          tasks={ this.state.tasks }
+                          mobile={ this.state.mobile }/>
 
                 <Toolbar isOpen={ this.state.isOpen }
                          toggleNewTaskModal={ this.toggleNewTaskModal }

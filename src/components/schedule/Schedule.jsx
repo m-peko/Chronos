@@ -1,103 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Timeline from './Timeline';
-import Task from './Task';
+import Day from './Day';
 
 import '../../styles/components/schedule/schedule.css';
 
-class Schedule extends Component {
-    render() {
-        if (!this.props.show) {
-            return null;
-        }
+const Schedule = (props) => {
+    const getTasksByDay = (day) => {
+        return props.tasks.filter(task => {
+            const date = new Date(task.date);
+            return date.getDay() === day;
+        });
+    };
 
-        return (
-            <main className='item main'>
-                <div className='schedule'>
-                    <Timeline/>
-
-                    <div className='tasks'>
-                        <ul>
-                            <li className='tasks-group'>
-                                <div className='top-info'><span>Monday</span></div>
-
-                                <ul>
-                                    <Task task={ this.props.tasks[0] }/>
-                                </ul>
-                            </li>
-
-                            <li className='tasks-group'>
-                                <div className='top-info'><span>Tuesday</span></div>
-
-                                <ul>
-                                    <Task task={ this.props.tasks[1] }/>
-                                </ul>
-                            </li>
-
-                            <li className='tasks-group'>
-                                <div className='top-info'><span>Wednesday</span></div>
-
-                                <ul>
-                                </ul>
-                            </li>
-
-                            <li className='tasks-group'>
-                                <div className='top-info'><span>Thursday</span></div>
-
-                                <ul>
-
-                                </ul>
-                            </li>
-
-                            <li className='tasks-group'>
-                                <div className='top-info'><span>Friday</span></div>
-
-                                <ul>
-
-                                </ul>
-                            </li>
-
-                            <li className='tasks-group'>
-                                <div className='top-info'><span>Saturday</span></div>
-
-                                <ul>
-
-                                </ul>
-                            </li>
-
-                            <li className='tasks-group'>
-                                <div className='top-info'><span>Sunday</span></div>
-
-                                <ul>
-
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                    {/*<div className='task-modal'>
-                        <header className='header'>
-                            <div className='content'>
-                                <span className='task-date'></span>
-                                <h3 className='task-name'></h3>
-                            </div>
-
-                            <div className='header-bg'></div>
-                        </header>
-
-                        <div className='body'>
-                            <div className='task-info'></div>
-                            <div className='body-bg'></div>
-                        </div>
-
-                        <a className='close'>Close</a>
-                    </div>
-
-                    <div className='cover-layer'></div>*/}
-                </div>
-            </main>
-        );
+    if (!props.show) {
+        return null;
     }
-}
+
+    return (
+        <main className='item main'>
+            <div className='schedule'>
+                <Timeline/>
+
+                <div className='tasks'>
+                    <ul>
+                        <Day day='Monday' tasks={ getTasksByDay(1) } mobile={ props.mobile }/>
+                        <Day day='Tuesday' tasks={ getTasksByDay(2) } mobile={ props.mobile }/>
+                        <Day day='Wednesday' tasks={ getTasksByDay(3) } mobile={ props.mobile }/>
+                        <Day day='Thursday' tasks={ getTasksByDay(4) } mobile={ props.mobile }/>
+                        <Day day='Friday' tasks={ getTasksByDay(5) } mobile={ props.mobile }/>
+                        <Day day='Saturday' tasks={ getTasksByDay(6) } mobile={ props.mobile }/>
+                        <Day day='Sunday' tasks={ getTasksByDay(0) } mobile={ props.mobile }/>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    );
+};
 
 export default Schedule;

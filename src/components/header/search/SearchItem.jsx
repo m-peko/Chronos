@@ -9,6 +9,7 @@ const SearchItem = (props) => {
             <span className='search-item-hours'>{ props.task.from } - { props.task.to }</span>
             <br/>
             <span className='search-item-category-location'>{ props.task.category } at { props.task.location }</span>
+            <span className='search-item-date'>{ props.task.date }</span>
         </li>
     );
 };

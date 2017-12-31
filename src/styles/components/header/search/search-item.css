@@ -20,6 +20,12 @@
     padding: 5px 10px;
 }
 
+.search-item-date {
+    font-size: 14px;
+    float: right;
+    padding-right: 10px;
+}
+
 .blue {
     border-left: 5px solid rgb(0, 116, 217) !important;
 }
