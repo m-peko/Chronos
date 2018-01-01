@@ -60,4 +60,28 @@
     .search {
         display: none;
     }
+
+    .search.search-mobile {
+        display: block;
+        background: rgb(36, 39, 46);
+        position: absolute;
+        width: 100%;
+        height: 55px;
+        top: 50px;
+        z-index: 9999;
+        border-top: 2px solid rgb(23, 26, 31);
+    }
+
+    .search.search-mobile .search-icon {
+        margin: 0 10px;
+    }
+
+    .search.search-mobile input#search {
+        width: calc(100% - 20px);
+        margin: 10px 10px 0px 10px;
+    }
+
+    .search.search-mobile .search-filter {
+        width: 100%;
+    }
 }

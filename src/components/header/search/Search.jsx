@@ -45,7 +45,7 @@ class Search extends Component {
 
     render() {
         return (
-            <div className='search'>
+            <div className={ this.props.showMobile ? 'search search-mobile' : 'search' }>
                 <span className='search-icon'>
                     <i className='fa fa-search'/>
                 </span>

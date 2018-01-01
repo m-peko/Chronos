@@ -5,7 +5,9 @@ const Day = (props) => {
     let tasks = '';
     if (props.tasks) {
         tasks = props.tasks.map(task => {
-            return <Task task={ task } mobile={ props.mobile }/>;
+            return <Task key={ Math.random().toString(36).substr(2, 16) }
+                         task={ task }
+                         mobile={ props.mobile }/>;
         });
     }
 
