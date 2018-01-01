@@ -15,6 +15,15 @@ class SyncForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+    }
+
+    componentDidMount() {
+        document.addEventListener('keydown', this.handleKeyDown, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handleKeyDown, false);
     }
 
     handleChange(event) {
@@ -32,7 +41,13 @@ class SyncForm extends Component {
     }
 
     handleCancel() {
-        this.setState(initialState);
+        this.props.close();
+    }
+
+    handleKeyDown(event) {
+        if (event.keyCode === 27) {
+            this.props.close();
+        }
     }
 
     render() {
