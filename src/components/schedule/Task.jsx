@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../../styles/components/schedule/task.css';
 
@@ -31,6 +32,11 @@ const Task = (props) => {
             </a>
         </li>
     );
+};
+
+Task.propTypes = {
+    task: PropTypes.object.isRequired,
+    mobile: PropTypes.bool.isRequired
 };
 
 export default Task;

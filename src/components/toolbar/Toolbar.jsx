@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../../styles/components/toolbar/toolbar.css';
 
@@ -17,6 +18,12 @@ const Toolbar = (props) => {
             </ul>
         </aside>
     );
+};
+
+Toolbar.propTypes = {
+    isOpen: PropTypes.object.isRequired,
+    toggleNewTaskModal: PropTypes.func.isRequired,
+    toggleSyncModal: PropTypes.func.isRequired
 };
 
 export default Toolbar;

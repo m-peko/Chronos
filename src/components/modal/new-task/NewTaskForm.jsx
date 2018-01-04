@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import '../../../styles/components/modal/new-task/new-task-form.css';
 
@@ -176,5 +177,10 @@ class NewTaskForm extends Component {
         );
     }
 }
+
+NewTaskForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    close: PropTypes.func.isRequired
+};
 
 export default NewTaskForm;

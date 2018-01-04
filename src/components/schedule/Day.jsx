@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Task from './Task';
 
 const Day = (props) => {
@@ -20,6 +21,12 @@ const Day = (props) => {
             </ul>
         </li>
     );
+};
+
+Day.propTypes = {
+    day: PropTypes.string.isRequired,
+    tasks: PropTypes.array.isRequired,
+    mobile: PropTypes.bool.isRequired
 };
 
 export default Day;

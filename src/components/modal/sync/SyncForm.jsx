@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import '../../../styles/components/modal/sync/sync-form.css';
 
@@ -78,5 +79,10 @@ class SyncForm extends Component {
         );
     }
 }
+
+SyncForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    close: PropTypes.func.isRequired
+};
 
 export default SyncForm;

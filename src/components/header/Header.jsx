@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Search from './search/Search';
 import MobileToolbar from './mobile/MobileToolbar';
 import Profile from './profile/Profile';
@@ -22,6 +23,17 @@ const Header = (props) => {
                      showMobile={ props.isOpen.profile }/>
         </header>
     );
+};
+
+Header.propTypes = {
+    user: PropTypes.object.isRequired,
+    tasks: PropTypes.array.isRequired,
+    isOpen: PropTypes.object.isRequired,
+    toggleSearch: PropTypes.func.isRequired,
+    toggleNewTaskModal: PropTypes.func.isRequired,
+    toggleSyncModal: PropTypes.func.isRequired,
+    toggleCalendar: PropTypes.func.isRequired,
+    toggleProfile: PropTypes.func.isRequired,
 };
 
 export default Header;

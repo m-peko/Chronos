@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../../../styles/components/header/search/search-item.css';
 
@@ -12,6 +13,10 @@ const SearchItem = (props) => {
             <span className='search-item-date'>{ props.task.date }</span>
         </li>
     );
+};
+
+SearchItem.propTypes = {
+    task: PropTypes.object.isRequired
 };
 
 export default SearchItem;

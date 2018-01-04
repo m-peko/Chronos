@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ProfileDetails = (props) => {
     return (
@@ -17,6 +18,13 @@ const ProfileDetails = (props) => {
             </div>
         </div>
     );
+};
+
+ProfileDetails.propTypes = {
+    fullName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    membership: PropTypes.string.isRequired,
+    showMobile: PropTypes.bool.isRequired
 };
 
 export default ProfileDetails;

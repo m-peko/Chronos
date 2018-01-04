@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CalendarHeader from './CalendarHeader';
 import Week from './Week';
 
 import '../../styles/components/calendar/calendar.css';
 
 class Calendar extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         const now = new Date();
         this.state = {
@@ -64,7 +65,7 @@ class Calendar extends Component {
             } else {
                 weekDays.push({
                     isActive: false,
-                    date: ''
+                    date: 0
                 });
             }
         }
@@ -110,5 +111,9 @@ class Calendar extends Component {
         );
     }
 }
+
+Calendar.propTypes = {
+    show: PropTypes.bool.isRequired
+};
 
 export default Calendar;

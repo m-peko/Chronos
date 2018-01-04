@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Timeline from './Timeline';
 import Day from './Day';
 
@@ -35,6 +36,12 @@ const Schedule = (props) => {
             </div>
         </main>
     );
+};
+
+Schedule.propTypes = {
+    show: PropTypes.bool.isRequired,
+    tasks: PropTypes.array.isRequired,
+    mobile: PropTypes.bool.isRequired
 };
 
 export default Schedule;

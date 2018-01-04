@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import SearchItem from './SearchItem';
 
 import '../../../styles/components/header/search/search.css';
@@ -58,5 +59,10 @@ class Search extends Component {
         );
     }
 }
+
+Search.propTypes = {
+    tasks: PropTypes.array.isRequired,
+    showMobile: PropTypes.bool.isRequired
+};
 
 export default Search;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../../../styles/components/header/mobile/mobile-toolbar.css';
 
@@ -27,6 +28,15 @@ const MobileToolbar = (props) => {
             </li>
         </ul>
     );
+};
+
+MobileToolbar.propTypes = {
+    isOpen: PropTypes.object.isRequired,
+    toggleSearch: PropTypes.func.isRequired,
+    toggleNewTaskModal: PropTypes.func.isRequired,
+    toggleSyncModal: PropTypes.func.isRequired,
+    toggleCalendar: PropTypes.func.isRequired,
+    toggleProfile: PropTypes.func.isRequired,
 };
 
 export default MobileToolbar;
