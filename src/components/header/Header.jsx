@@ -9,7 +9,8 @@ import '../../styles/components/header/header.css';
 const Header = (props) => {
     return (
         <header className='item header'>
-            <img src='images/chronos.png' className='logo' alt='Chronos'/>
+            <img src='images/chronos.png' className='logo' alt='Chronos'
+                 onClick={ props.toggleHome }/>
             <Search tasks={ props.tasks }
                     showMobile={ props.isOpen.search }/>
             <MobileToolbar isOpen={ props.isOpen }

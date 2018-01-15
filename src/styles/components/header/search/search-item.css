@@ -1,7 +1,8 @@
 .search-item {
     text-align: left;
     font-weight: lighter;
-    height: 60px;
+    height: 80px;
+    padding: 15px 0px;
 }
 
 .search-item-title {

@@ -65,7 +65,7 @@ class Calendar extends Component {
             } else {
                 weekDays.push({
                     isActive: false,
-                    date: 0
+                    date: ''
                 });
             }
         }

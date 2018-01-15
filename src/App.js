@@ -15,6 +15,15 @@ import Tasks from './data/Tasks.json';
 
 import './styles/app.css';
 
+const initialIsOpen = {
+    schedule: true,
+    search: false,
+    newTask: false,
+    sync: false,
+    calendar: false,
+    profile: false
+};
+
 class App extends Component {
     constructor() {
         super();
@@ -23,19 +32,13 @@ class App extends Component {
             user: User,
             tasks: Tasks,
             syncs: [],
-            isOpen: {
-                schedule: true,
-                search: false,
-                newTask: false,
-                sync: false,
-                calendar: false,
-                profile: false
-            },
+            isOpen: initialIsOpen,
             mobile: false
         };
 
         this.resize = this.resize.bind(this);
 
+        this.toggleHome = this.toggleHome.bind(this);
         this.toggleSearch = this.toggleSearch.bind(this);
         this.toggleNewTaskModal = this.toggleNewTaskModal.bind(this);
         this.toggleSyncModal = this.toggleSyncModal.bind(this);
@@ -54,14 +57,7 @@ class App extends Component {
     resize() {
         if (window.innerWidth > 760) {
             this.setState({
-                isOpen: {
-                    schedule: true,
-                    search: false,
-                    newTask: false,
-                    sync: false,
-                    calendar: false,
-                    profile: false
-                },
+                isOpen: initialIsOpen,
                 mobile: false
             });
         } else {
@@ -69,6 +65,12 @@ class App extends Component {
                 mobile: true
             });
         }
+    }
+
+    toggleHome() {
+        this.setState({
+            isOpen: initialIsOpen
+        });
     }
 
     toggleSearch() {
@@ -147,6 +149,7 @@ class App extends Component {
                 <Header user={ this.state.user }
                         tasks={ this.state.tasks }
                         isOpen={ this.state.isOpen }
+                        toggleHome={ this.toggleHome }
                         toggleSearch={ this.toggleSearch }
                         toggleNewTaskModal={ this.toggleNewTaskModal }
                         toggleSyncModal={ this.toggleSyncModal }

@@ -9,7 +9,10 @@ const Day = (props) => {
 
 Day.propTypes = {
     isActive: PropTypes.bool.isRequired,
-    date: PropTypes.number.isRequired
+    date: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string
+    ]).isRequired
 };
 
 export default Day;

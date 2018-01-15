@@ -32,7 +32,7 @@
     .schedule .tasks .single-task {
         position: absolute;
         z-index: 3;
-        width: calc(100% + 2px);
+        width: calc(100% - 10px);
         left: -1px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
         -ms-flex-negative: 1;
