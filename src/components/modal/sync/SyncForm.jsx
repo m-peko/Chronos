@@ -52,7 +52,6 @@ class SyncForm extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>
                 <div className='modal-body sync-form'>

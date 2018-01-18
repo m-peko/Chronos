@@ -38,8 +38,8 @@ class Search extends Component {
     }
 
     generateFilteredContent() {
-        return this.state.filteredTasks.map(task => {
-            return <SearchItem key={ Math.random().toString(36).substr(2, 16) }
+        return this.state.filteredTasks.map((task, index) => {
+            return <SearchItem key={ index }
                                task={ task }/>;
         });
     }

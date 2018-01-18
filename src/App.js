@@ -79,6 +79,7 @@ class App extends Component {
                 schedule: this.state.isOpen.schedule,
                 search: !this.state.isOpen.search,
                 newTask: this.state.isOpen.newTask,
+                sync: this.state.isOpen.sync,
                 calendar: this.state.isOpen.calendar,
                 profile: this.state.isOpen.profile
             }
@@ -91,6 +92,7 @@ class App extends Component {
                 schedule: this.state.isOpen.schedule,
                 search: this.state.isOpen.search,
                 newTask: !this.state.isOpen.newTask,
+                sync: this.state.isOpen.sync,
                 calendar: this.state.isOpen.calendar,
                 profile: false
             }
@@ -102,6 +104,7 @@ class App extends Component {
             isOpen: {
                 schedule: this.state.isOpen.schedule,
                 search: this.state.isOpen.search,
+                newTask: this.state.isOpen.newTask,
                 sync: !this.state.isOpen.sync,
                 calendar: this.state.isOpen.calendar,
                 profile: false
@@ -113,7 +116,11 @@ class App extends Component {
         this.setState({
             isOpen: {
                 schedule: !this.state.isOpen.schedule,
-                calendar: !this.state.isOpen.calendar
+                search: this.state.isOpen.search,
+                newTask: this.state.isOpen.newTask,
+                sync: this.state.isOpen.sync,
+                calendar: !this.state.isOpen.calendar,
+                profile: this.state.isOpen.profile
             }
         });
     }

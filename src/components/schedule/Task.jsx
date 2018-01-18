@@ -17,7 +17,8 @@ const Task = (props) => {
     const timelineDuration = 60; /* An hour */
 
     const taskTop = slotHeight * (getScheduleTimestamp(props.task.from) - timelineStart) / timelineDuration;
-    const taskHeight = props.mobile ? 100 : slotHeight * (getScheduleTimestamp(props.task.to) - getScheduleTimestamp(props.task.from)) / timelineDuration;
+    const taskDuration = getScheduleTimestamp(props.task.to) - getScheduleTimestamp(props.task.from);
+    const taskHeight = props.mobile ? 100 : slotHeight * taskDuration / timelineDuration;
 
     const style = {
         top: (taskTop - 1) + 'px',

@@ -5,8 +5,8 @@ import Task from './Task';
 const Day = (props) => {
     let tasks = '';
     if (props.tasks) {
-        tasks = props.tasks.map(task => {
-            return <Task key={ Math.random().toString(36).substr(2, 16) }
+        tasks = props.tasks.map((task, index) => {
+            return <Task key={ index }
                          task={ task }
                          mobile={ props.mobile }/>;
         });

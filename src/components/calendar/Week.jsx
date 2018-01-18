@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Day from './Day';
 
 const Week = (props) => {
-    const days = props.days.map(day => {
-        return <Day key={ Math.random().toString(36).substr(2, 16) }
+    const days = props.days.map((day, index) => {
+        return <Day key={ index }
                     isActive={ day.isActive }
                     date={ day.date }/>
     });

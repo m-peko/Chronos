@@ -77,8 +77,8 @@ class Calendar extends Component {
             });
         }
 
-        const content = weeks.map(week => {
-            return <Week key={ Math.random().toString(36).substr(2, 16) }
+        const content = weeks.map((week, index) => {
+            return <Week key={ index }
                          days={ week.days }/>;
         });
 
