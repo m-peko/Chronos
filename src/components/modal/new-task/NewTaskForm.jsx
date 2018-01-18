@@ -170,8 +170,8 @@ class NewTaskForm extends Component {
                     </div>
                 </div>
                 <div className='modal-footer'>
-                    <button className='app-light-btn' onClick={ this.handleCancel }>Cancel</button>
                     <button className='app-btn' onClick={ this.handleSubmit }>Add</button>
+                    <button className='app-light-btn' onClick={ this.handleCancel }>Cancel</button>
                 </div>
             </div>
         );
