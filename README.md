@@ -20,3 +20,9 @@
 <p align="center">
   <img alt="Demo_2" src="https://github.com/m-peko/Chronos/blob/master/Demo_2.gif"/>
 </p>
+
+## Support
+
+If you like the work `Chronos` is doing, please consider supporting it:
+
+<a href="https://www.buymeacoffee.com/mpeko" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
